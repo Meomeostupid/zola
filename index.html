@@ -3,31 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>P2P Video Call - Simple</title>
+    <title>Zola - P2P Video Call</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Video Call P2P</h1>
+        <h1>Zola Call</h1>
         
         <div class="status-box">
-            <p>ID của bạn: <strong id="my-id">Đang khởi tạo...</strong></p>
-            <input type="text" id="peer-id-input" placeholder="Nhập ID đối phương">
-            <button id="btn-call">📞 Gọi ngay</button>
+            <p>ID của bạn: <strong id="my-id">...</strong></p>
+            <div class="input-group">
+                <input type="text" id="peer-id-input" placeholder="Nhập ID đối phương">
+                <button id="btn-call"><i data-lucide="phone"></i> Gọi ngay</button>
+            </div>
         </div>
 
         <div class="video-grid">
-            <div class="video-wrapper">
+            <div class="video-wrapper shadow-blue">
                 <span>Bạn</span>
                 <video id="local-video" autoplay muted playsinline></video>
+                <div class="controls">
+                    <button id="toggle-mic" class="btn-icon"><i data-lucide="mic"></i></button>
+                    <button id="toggle-video" class="btn-icon"><i data-lucide="video"></i></button>
+                </div>
             </div>
-            <div class="video-wrapper">
+            <div class="video-wrapper shadow-red">
                 <span>Đối phương</span>
                 <video id="remote-video" autoplay playsinline></video>
+                <div class="controls">
+                    <button id="btn-hangup" class="btn-icon btn-danger"><i data-lucide="phone-off"></i></button>
+                </div>
             </div>
         </div>
     </div>
     <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>

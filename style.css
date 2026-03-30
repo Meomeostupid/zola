@@ -1,0 +1,154 @@
+/* Giao diện Dark Mode hiện đại */
+:root {
+    --primary-color: #0084ff; /* Màu xanh Zalo */
+    --bg-color: #0f172a;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --text-color: #f8fafc;
+}
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: radial-gradient(circle at top left, #1e293b, #0f172a);
+    color: var(--text-color);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 95%;
+    max-width: 1000px;
+    padding: 30px;
+    background: var(--card-bg);
+    backdrop-filter: blur(15px); /* Hiệu ứng kính mờ */
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+    background: linear-gradient(to right, #60a5fa, #0084ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Khu vực trạng thái */
+.status-box {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 30px;
+}
+
+#my-id {
+    color: #34d399; /* Màu xanh lá cho ID */
+    font-family: monospace;
+    background: rgba(52, 211, 153, 0.1);
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+input {
+    padding: 12px 18px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    width: 250px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 132, 255, 0.3);
+}
+
+button {
+    padding: 12px 24px;
+    border-radius: 12px;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-left: 10px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(0, 132, 255, 0.5);
+}
+
+/* Khu vực Video */
+.video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.video-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #000;
+    aspect-ratio: 16/9;
+    border: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+.video-wrapper span {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    z-index: 10;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+    .video-grid { grid-template-columns: 1fr; }
+    input { width: 100%; margin-bottom: 10px; }
+    button { width: 100%; margin-left: 0; }
+}
+.input-group { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.controls {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+    z-index: 20;
+}
+.btn-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50% !important;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(5px);
+}
+.btn-icon:hover { background: var(--primary-color) !important; }
+.btn-danger { background: rgba(239, 68, 68, 0.7) !important; }
+.btn-danger:hover { background: #ef4444 !important; }
+.shadow-blue { box-shadow: 0 0 20px rgba(0, 132, 255, 0.2); }
+.shadow-red { box-shadow: 0 0 20px rgba(239, 68, 68, 0.1); }
+i { width: 20px; height: 20px; }
